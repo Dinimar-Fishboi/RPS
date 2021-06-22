@@ -1,13 +1,38 @@
 
-// Stores user response in variable
-var tagName = prompt("Please enter an HTML Tag (ex. h1, h2, p, div):", "enter tag");
-
 
 //When user enters the screen, they should be asked 'R, P, or S'
+// the input will become var userAnswer
+// now I THINK that the (userAnswer) will be given an integer of 1.
 
 var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",)
 
 console.log(userAnswer);
+
+// The below PURELY looks at the compAnswer
+
+var possibleAnswers = ["S", "P", "R"]
+
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  var randomIndex = getRandomInt(3);
+
+ var compAnswer = possibleAnswers[randomIndex];
+
+ console.log(compAnswer);
+
+//  if the user picks R and the computer picks S then the user wins
+// if the user picks P and the computer picks R then the user wins
+
+if ( compAnswer === userAnswer) {
+    console.log("You have tied!")
+} else if (compAnswer > userAnswer) {
+    console.log("You Lost!")
+} else if (compAnswer < userAnswer) {
+    console.log("You Won!")
+}
 
 // var userPrompt = {
 //    userInput: ["R","P","S"],
@@ -87,16 +112,19 @@ console.log(userAnswer);
 
 // //What are the possible inputs from user?
 
-var possibleAnswers = ["R", "P", "S"]
+
+//-------------------
+
+// var possibleAnswers = ["R", "P", "S"]
 
 
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
+// function getRandomInt(max) {
+//     return Math.floor(Math.random() * max);
+//   }
 
-  var randomIndex = getRandomInt(3);
+//   var randomIndex = getRandomInt(3);
 
- var compAnswer = possibleAnswers[randomIndex];
+//  var compAnswer = possibleAnswers[randomIndex];
 
- console.log(compAnswer);
+//  console.log(compAnswer);
