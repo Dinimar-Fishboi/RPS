@@ -58,7 +58,6 @@ function getRandomInt(max) {
   // the below command prints that function.
   
  var x = getRandomInt(5);
-
  console.log(x);
 
   console.log(getRandomInt(3));
