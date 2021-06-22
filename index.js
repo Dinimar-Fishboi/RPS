@@ -12,7 +12,6 @@ console.log(userAnswer);
 
 var possibleAnswers = ["S", "P", "R"]
 
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -23,17 +22,46 @@ function getRandomInt(max) {
 
  console.log(compAnswer);
 
-//  if the user picks R and the computer picks S then the user wins
-// if the user picks P and the computer picks R then the user wins
+// Below is a HORRIBLE Boolean that works.
+// Detailing the 7 possible outcomes.
 
 if ( compAnswer === userAnswer) {
     console.log("You have tied!")
-} else if (compAnswer > userAnswer) {
+} else if ((compAnswer==="P") && (userAnswer=== "R")) {
     console.log("You Lost!")
-} else if (compAnswer < userAnswer) {
+} else if ((compAnswer==="S") && (userAnswer=== "R")) {
+    console.log("You Won!")
+} else if ((compAnswer==="S") && (userAnswer=== "P")) {
+    console.log("You Lost!")
+} else if ((compAnswer==="R") && (userAnswer=== "P")) {
+    console.log("You Won!")
+} else if ((compAnswer==="R") && (userAnswer=== "S")) {
+    console.log("You Lost!")
+} else if ((compAnswer==="P") && (userAnswer=== "S")) {
     console.log("You Won!")
 }
 
+
+if ( compAnswer === userAnswer) {
+    window.alert("You have tied!")
+} else if ((compAnswer==="P") && (userAnswer=== "R")) {
+    window.alert("You Lost!")
+} else if ((compAnswer==="S") && (userAnswer=== "R")) {
+    window.alert()("You Won!")
+} else if ((compAnswer==="S") && (userAnswer=== "P")) {
+    window.alert("You Lost!")
+} else if ((compAnswer==="R") && (userAnswer=== "P")) {
+    window.alert("You Won!")
+} else if ((compAnswer==="R") && (userAnswer=== "S")) {
+    window.alert("You Lost!")
+} else if ((compAnswer==="P") && (userAnswer=== "S")) {
+    window.alert("You Won!")
+}
+
+
+function newFunction() {
+    return console.log;
+}
 // var userPrompt = {
 //    userInput: ["R","P","S"],
 // }
