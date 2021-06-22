@@ -3,11 +3,40 @@
 
 //When user enters the screen, they should be asked 'R, P, or S'
 
-window.prompt("Hi! R, P or S?")
+window.prompt("Hi! Want to play?", "R, S or P?",)
 
 var userPrompt = {
-    userInput: ["R","P","S"],
+   userInput: ["R","P","S"],
 }
+
+function game () {
+    var ABC = 1;
+    var choice = window.prompt("Let's Play");
+        switch (choice) {
+            case "R":
+                console.log("You chose Rock");
+                var R = 1;
+                var P = 2;
+                var S = 0;
+                break;
+            case "P":
+                console.log("You chose Paper");
+                var R = 0;
+                var P = 1;
+                var S = 2;
+                break;
+            case "S":
+                console.log("You chose Scissors");
+                var R = 2;
+                var P = 0;
+                var S = 1;
+            default: 
+            console.log("Oh, so you don't want to play?")
+                break;
+        }
+}
+
+game ();
 
 //When the user enters 'R', 'P', or 'S' - that should be given a value
 // Whatever user enters, value is assigned value '1'
@@ -28,6 +57,11 @@ function getRandomInt(max) {
   // !!!!!!!!!! The above function randomly generates a number,
   // the below command prints that function.
   
+ var x = getRandomInt(5);
+
+ console.log(x);
+
+  console.log(getRandomInt(3));
  window.alert((getRandomInt(3)));
 
 
@@ -44,4 +78,4 @@ function getRandomInt(max) {
 // The user will be asked if they want to 'Play Again'
 
 // If they select 'OK' they return to the start. If they select 'Cancel'
-// The alert box will close.
+// The alert box will 
