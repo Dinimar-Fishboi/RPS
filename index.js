@@ -7,7 +7,6 @@
 
 
 // The below PURELY looks at the compAnswer
-
 var possibleAnswers = ["S", "P", "R"] // This array means that possibleAnswers[0] = "S"
 
 function getRandomInt(max) {
@@ -49,6 +48,12 @@ function getRandomInt(max) {
 
 
  // window.prompt('you have won x amoiun')
+//  var gameTotal = {
+//     Wins: 0,
+//     Loses: 0,
+//     Ties: 0,
+// }
+
 
 function playGame() {
     var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",)
@@ -56,29 +61,62 @@ function playGame() {
     console.log(userAnswer);
     if ( compAnswer === userAnswer) {
         window.alert("The computer chose " + compAnswer + " You have tied!");
-        console.log("You have tied!")
+        console.log("You have tied!");
+        gameTotal.Ties += 1
     } else if ((compAnswer==="P") && (userAnswer=== "R")) {
         window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!")
+        console.log("You Lost!");
+        gameTotal.Loses = gameTotal.Loses +1;
     } else if ((compAnswer==="S") && (userAnswer=== "R")) {
         window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!")
+        console.log("You Won!");
+        gameTotal.Wins = gameTotal.Wins +1;
     } else if ((compAnswer==="S") && (userAnswer=== "P")) {
         window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!")
+        console.log("You Lost!");
+        gameTotal.Loses = gameTotal.Loses +1;
     } else if ((compAnswer==="R") && (userAnswer=== "P")) {
         window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!")
+        console.log("You Won!");
+        gameTotal.Wins = gameTotal.Wins +1;
     } else if ((compAnswer==="R") && (userAnswer=== "S")) {
         window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!")
+        console.log("You Lost!");
+        gameTotal.Loses = gameTotal.Loses +1;
     } else if ((compAnswer==="P") && (userAnswer=== "S")) {
         window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!")
+        console.log("You Won!");
+        gameTotal.Wins = gameTotal.Wins +1;
+
     }
+    console.log(gameTotal)
 }
 
-playGame()
+
+// function checkWins(comp, user) {
+//     possibleAnswers[0] > userAnswer["R"]
+// }
+
+
+
+var gameTotal = {
+    Wins: 0,
+    Loses: 0,
+    Ties: 0,
+}
+
+
+ var gameFinished = false
+
+
+while (!gameFinished) {
+    // code block to be executed
+    playGame();
+     gameFinished = !window.confirm("Want to play again?")
+    
+  }
+
+
 
 // var userPrompt = {
 //    userInput: ["R","P","S"],
