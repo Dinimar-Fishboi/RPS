@@ -47,7 +47,7 @@ if ( compAnswer === userAnswer) {
 } else if ((compAnswer==="P") && (userAnswer=== "R")) {
     window.alert("You Lost!")
 } else if ((compAnswer==="S") && (userAnswer=== "R")) {
-    window.alert()("You Won!")
+    window.alert("You Won!")
 } else if ((compAnswer==="S") && (userAnswer=== "P")) {
     window.alert("You Lost!")
 } else if ((compAnswer==="R") && (userAnswer=== "P")) {
