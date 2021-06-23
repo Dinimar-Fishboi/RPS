@@ -7,16 +7,13 @@
 
 
 // The below PURELY looks at the compAnswer
-var possibleAnswers = ["S", "P", "R"] // This array means that possibleAnswers[0] = "S"
+var possibleAnswers = ["S", "P", "R"] 
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  } // This function ensures a randome number between and including 0 up to 'max'-1
-  // is returned.
+  } 
 
-  var randomIndex = getRandomInt(3); // randomIndex will equal either 0, 1, or 2.
-  // aka, randomIndex will equal S, P or R respectively. This is the same output as the
-  // array, ergo the below is true.
+  var randomIndex = getRandomInt(3); 
 
  var compAnswer = possibleAnswers[randomIndex]; 
 
@@ -54,10 +51,34 @@ function getRandomInt(max) {
 //     Ties: 0,
 // }
 
+// var possibleAnswers = ["S", "P", "R"] // This array means that possibleAnswers[0] = "S"
+
+// function getRandomInt(max) {
+//     return Math.floor(Math.random() * max);
+//   } // This function ensures a randome number between and including 0 up to 'max'-1
+//   // is returned.
+
+//   var randomIndex = getRandomInt(3); // randomIndex will equal either 0, 1, or 2.
+//   // aka, randomIndex will equal S, P or R respectively. This is the same output as the
+//   // array, ergo the below is true.
+
+//  var compAnswer = possibleAnswers[randomIndex]; 
+
+//  console.log(compAnswer);
+
 
 function playGame() {
-    var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",)
+    var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",);
+    var possibleAnswers = ["S", "P", "R"] 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+     } 
 
+     var randomIndex = getRandomInt(3); 
+
+    var compAnswer = possibleAnswers[randomIndex]; 
+
+    console.log(compAnswer);
     console.log(userAnswer);
     if ( compAnswer === userAnswer) {
         window.alert("The computer chose " + compAnswer + " You have tied!");
@@ -87,9 +108,9 @@ function playGame() {
         window.alert("The computer chose " + compAnswer + ", You Won!");
         console.log("You Won!");
         gameTotal.Wins = gameTotal.Wins +1;
-
     }
     console.log(gameTotal)
+    window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
 }
 
 
