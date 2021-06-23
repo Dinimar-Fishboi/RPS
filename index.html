@@ -6,8 +6,51 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Let's Play</h1>
+    <h1>Let's Play Rock Paper Scissors!</h1>
     <button onclick="startGame()">Click me to play again!</button>
+    <p>
+        Important things to remember: you can turn ANYTHING into a variable so long
+        as you provide a name and assignment.
+        <pre>
+
+            var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",);
+
+        </pre>
+        This statement essentially states that the answer that the user puts into the window.prompt 
+        so if the user enters <b>"R"</b>, <b>R</b> = userAnswer.
+    </p>
+    <p>
+        The other necessary step in this process was to make the computer randomly generate 
+        P, R or S. 
+    </p>
+    <p>
+        So - we made an array of 3 variables by writing the following:
+        <pre>
+            var possibleAnswers = ["S", "P", "R"] 
+        </pre>
+        Which longform look like so:
+        <pre>
+            possibleAnswers[0] // as S
+            possibleAnswers[1] // as P
+            possibleAnswers[2] // as R
+        </pre>
+        This means that every potential Random Computer output had an integer value. So then we need an equation
+        to generate a random integer of 0, 1 or 2.
+    </p>
+    <p>
+        Which is where the next bit of code comes in:
+        <pre>
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+             } 
+        </pre>
+        Confession: I have no true understanding of this. I <i>absolutely</i> googled and stole it off the internet.
+        Specifically from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">here.</a>
+        What I <i>do</i> get is that (max) specifies the largest, non inclusive integer.
+    </p>
+    <p>
+        Or in this instance - the length of an array...😈
+    </p>
     <script src="index.js"></script>
 </body>
 </html>
