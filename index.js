@@ -181,8 +181,8 @@ var gameTotal = {
 }
 
 
+function startGame() {
  var gameFinished = false
-
 
 while (!gameFinished) {
     // code block to be executed
@@ -192,8 +192,9 @@ while (!gameFinished) {
         window.alert("Okay, thanks for playing 🤜 ✋ ✌")
     }
   }
-
-
+}
+ 
+startGame();
 
 // var userPrompt = {
 //    userInput: ["R","P","S"],
