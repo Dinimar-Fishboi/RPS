@@ -68,8 +68,10 @@ function getRandomInt(max) {
 
 
 function playGame() {
+   
     var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",);
     var possibleAnswers = ["S", "P", "R"] 
+    
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
      } 
@@ -80,38 +82,39 @@ function playGame() {
 
     console.log(compAnswer);
     console.log(userAnswer);
-    if ( compAnswer === userAnswer) {
-        window.alert("The computer chose " + compAnswer + " You have tied!");
-        console.log("You have tied!");
-        gameTotal.Ties += 1
-    } else if ((compAnswer==="P") && (userAnswer=== "R")) {
-        window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!");
-        gameTotal.Loses = gameTotal.Loses +1;
-    } else if ((compAnswer==="S") && (userAnswer=== "R")) {
-        window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!");
-        gameTotal.Wins = gameTotal.Wins +1;
-    } else if ((compAnswer==="S") && (userAnswer=== "P")) {
-        window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!");
-        gameTotal.Loses = gameTotal.Loses +1;
-    } else if ((compAnswer==="R") && (userAnswer=== "P")) {
-        window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!");
-        gameTotal.Wins = gameTotal.Wins +1;
-    } else if ((compAnswer==="R") && (userAnswer=== "S")) {
-        window.alert("The computer chose " + compAnswer + ", You Lost!");
-        console.log("You Lost!");
-        gameTotal.Loses = gameTotal.Loses +1;
-    } else if ((compAnswer==="P") && (userAnswer=== "S")) {
-        window.alert("The computer chose " + compAnswer + ", You Won!");
-        console.log("You Won!");
-        gameTotal.Wins = gameTotal.Wins +1;
+       
+        if ( compAnswer === userAnswer) {
+            window.alert("The computer chose " + compAnswer + " You have tied!");
+            console.log("You have tied!");
+            gameTotal.Ties += 1
+        } else if ((compAnswer==="P") && (userAnswer=== "R")) {
+            window.alert("The computer chose " + compAnswer + ", You Lost!");
+            console.log("You Lost!");
+            gameTotal.Loses = gameTotal.Loses +1;
+        } else if ((compAnswer==="S") && (userAnswer=== "R")) {
+            window.alert("The computer chose " + compAnswer + ", You Won!");
+            console.log("You Won!");
+            gameTotal.Wins = gameTotal.Wins +1;
+        } else if ((compAnswer==="S") && (userAnswer=== "P")) {
+            window.alert("The computer chose " + compAnswer + ", You Lost!");
+            console.log("You Lost!");
+            gameTotal.Loses = gameTotal.Loses +1;
+        } else if ((compAnswer==="R") && (userAnswer=== "P")) {
+            window.alert("The computer chose " + compAnswer + ", You Won!");
+            console.log("You Won!");
+            gameTotal.Wins = gameTotal.Wins +1;
+        } else if ((compAnswer==="R") && (userAnswer=== "S")) {
+            window.alert("The computer chose " + compAnswer + ", You Lost!");
+            console.log("You Lost!");
+            gameTotal.Loses = gameTotal.Loses +1;
+        } else if ((compAnswer==="P") && (userAnswer=== "S")) {
+            window.alert("The computer chose " + compAnswer + ", You Won!");
+            console.log("You Won!");
+            gameTotal.Wins = gameTotal.Wins +1;
+        }
+        console.log(gameTotal)
+        window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
     }
-    console.log(gameTotal)
-    window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
-}
 
 
 // function checkWins(comp, user) {
@@ -134,7 +137,9 @@ while (!gameFinished) {
     // code block to be executed
     playGame();
      gameFinished = !window.confirm("Want to play again?")
-    
+    if (gameFinished) {
+        window.alert("Okay, thanks for playing :)")
+    }
   }
 
 
