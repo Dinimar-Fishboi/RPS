@@ -4,64 +4,82 @@
 // the input will become var userAnswer
 // now I THINK that the (userAnswer) will be given an integer of 1.
 
-var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",)
 
-console.log(userAnswer);
 
 // The below PURELY looks at the compAnswer
 
-var possibleAnswers = ["S", "P", "R"]
+var possibleAnswers = ["S", "P", "R"] // This array means that possibleAnswers[0] = "S"
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+  } // This function ensures a randome number between and including 0 up to 'max'-1
+  // is returned.
 
-  var randomIndex = getRandomInt(3);
+  var randomIndex = getRandomInt(3); // randomIndex will equal either 0, 1, or 2.
+  // aka, randomIndex will equal S, P or R respectively. This is the same output as the
+  // array, ergo the below is true.
 
- var compAnswer = possibleAnswers[randomIndex];
+ var compAnswer = possibleAnswers[randomIndex]; 
 
  console.log(compAnswer);
 
 // Below is a HORRIBLE Boolean that works.
 // Detailing the 7 possible outcomes.
 
-if ( compAnswer === userAnswer) {
-    console.log("You have tied!")
-} else if ((compAnswer==="P") && (userAnswer=== "R")) {
-    console.log("You Lost!")
-} else if ((compAnswer==="S") && (userAnswer=== "R")) {
-    console.log("You Won!")
-} else if ((compAnswer==="S") && (userAnswer=== "P")) {
-    console.log("You Lost!")
-} else if ((compAnswer==="R") && (userAnswer=== "P")) {
-    console.log("You Won!")
-} else if ((compAnswer==="R") && (userAnswer=== "S")) {
-    console.log("You Lost!")
-} else if ((compAnswer==="P") && (userAnswer=== "S")) {
-    console.log("You Won!")
+// if ( compAnswer === userAnswer) {
+//     console.log("You have tied!")
+// } else if ((compAnswer==="P") && (userAnswer=== "R")) {
+//     console.log("You Lost!"),
+//     console.log("Oh and this message prints")
+// } else if ((compAnswer==="S") && (userAnswer=== "R")) {
+//     console.log("You Won!"),
+//     console.log("Oh and this message prints")
+// } else if ((compAnswer==="S") && (userAnswer=== "P")) {
+//     console.log("You Lost!")
+// } else if ((compAnswer==="R") && (userAnswer=== "P")) {
+//     console.log("You Won!")
+// } else if ((compAnswer==="R") && (userAnswer=== "S")) {
+//     console.log("You Lost!")
+// } else if ((compAnswer==="P") && (userAnswer=== "S")) {
+//     console.log("You Won!")
+// }
+
+
+
+
+
+ // window.prompt('you have won x amoiun')
+
+function playGame() {
+    var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",)
+
+    console.log(userAnswer);
+    if ( compAnswer === userAnswer) {
+        window.alert("The computer chose " + compAnswer + " You have tied!");
+        console.log("You have tied!")
+    } else if ((compAnswer==="P") && (userAnswer=== "R")) {
+        window.alert("The computer chose " + compAnswer + ", You Lost!");
+        console.log("You Lost!")
+    } else if ((compAnswer==="S") && (userAnswer=== "R")) {
+        window.alert("The computer chose " + compAnswer + ", You Won!");
+        console.log("You Won!")
+    } else if ((compAnswer==="S") && (userAnswer=== "P")) {
+        window.alert("The computer chose " + compAnswer + ", You Lost!");
+        console.log("You Lost!")
+    } else if ((compAnswer==="R") && (userAnswer=== "P")) {
+        window.alert("The computer chose " + compAnswer + ", You Won!");
+        console.log("You Won!")
+    } else if ((compAnswer==="R") && (userAnswer=== "S")) {
+        window.alert("The computer chose " + compAnswer + ", You Lost!");
+        console.log("You Lost!")
+    } else if ((compAnswer==="P") && (userAnswer=== "S")) {
+        window.alert("The computer chose " + compAnswer + ", You Won!");
+        console.log("You Won!")
+    }
 }
 
+playGame()
 
-if ( compAnswer === userAnswer) {
-    window.alert("You have tied!")
-} else if ((compAnswer==="P") && (userAnswer=== "R")) {
-    window.alert("You Lost!")
-} else if ((compAnswer==="S") && (userAnswer=== "R")) {
-    window.alert("You Won!")
-} else if ((compAnswer==="S") && (userAnswer=== "P")) {
-    window.alert("You Lost!")
-} else if ((compAnswer==="R") && (userAnswer=== "P")) {
-    window.alert("You Won!")
-} else if ((compAnswer==="R") && (userAnswer=== "S")) {
-    window.alert("You Lost!")
-} else if ((compAnswer==="P") && (userAnswer=== "S")) {
-    window.alert("You Won!")
-}
-
-
-function newFunction() {
-    return console.log;
-}
 // var userPrompt = {
 //    userInput: ["R","P","S"],
 // }
