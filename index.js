@@ -126,14 +126,16 @@ function playGame() {
         return Math.floor(Math.random() * max);
      } 
 
-     var randomIndex = getRandomInt(3); 
+        var randomIndex = getRandomInt(3); 
 
-    var compAnswer = possibleAnswers[randomIndex]; 
+        var compAnswer = possibleAnswers[randomIndex]; 
 
-    console.log(compAnswer);
-    console.log(userAnswer);
+        console.log(compAnswer);
+        console.log(userAnswer);
        
-         if ( compAnswer === userAnswer) {
+       
+
+        if ( compAnswer === userAnswer) {
             window.alert("The computer chose " + compAnswer + " You have tied!");
             console.log("You have tied!");
             gameTotal.Ties += 1
@@ -161,9 +163,14 @@ function playGame() {
         //     window.alert("The computer chose " + compAnswer + ", You Won!");
         //     console.log("You Won!");
         //     gameTotal.Wins = gameTotal.Wins +1;
+        } else (userAnswer = !possibleAnswers) {
+            window.alert("I don't think you can play that???")
         }
+
         console.log(gameTotal)
         window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
+   
+        
     }
 
 
