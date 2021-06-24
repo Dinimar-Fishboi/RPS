@@ -164,7 +164,7 @@ function playGame() {
         //     console.log("You Won!");
         //     gameTotal.Wins = gameTotal.Wins +1;
         // } else if ((userAnswer !== "R") ||(userAnswer !== "S") || (userAnswer !== "P")) ; {
-         //   window.alert("I don't think you can play that???")
+        //    window.alert("I don't think you can play that???")
         }
 
         console.log(gameTotal)
