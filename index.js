@@ -116,29 +116,40 @@
 //         window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
 //     }
 
+var gameTotal = {
+    Wins: 0,
+    Loses: 0,
+    Ties: 0,
+}
+
+
 
 function playGame() {
    
-    var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",);
+    var userAnswer = window.prompt("Hi! Want to play Rock, Paper, Scissors?", "R, S or P?",);
     var possibleAnswers = ["S", "P", "R"] 
     userAnswer = userAnswer.toUpperCase();
-    
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
      } 
-
+    
         var randomIndex = getRandomInt(3); 
-
         var compAnswer = possibleAnswers[randomIndex]; 
-
+    
+    
         console.log(compAnswer);
         console.log(userAnswer);
-       
-       
+
         if (!userAnswer){
-            return;
-        }
-        else if ( compAnswer === userAnswer) {
+            return;}
+        // } 
+        //  if (userAnswer !== "R" || "P" || "S") {
+        
+        //     window.alert("That's not an answer");
+        //     return;
+        // } 
+             if ( compAnswer === userAnswer) {
             window.alert("The computer chose " + compAnswer + " You have tied!");
             console.log("You have tied!");
             gameTotal.Ties += 1
@@ -150,26 +161,10 @@ function playGame() {
             window.alert("The computer chose " + compAnswer + ", You Won!");
             console.log("You Won!");
             gameTotal.Wins = gameTotal.Wins +1;
-        // } else if ((compAnswer==="S") && (userAnswer=== "P")) {
-        //     window.alert("The computer chose " + compAnswer + ", You Lost!");
-        //     console.log("You Lost!");
-        //     gameTotal.Loses = gameTotal.Loses +1;
-        // } else if ((compAnswer==="R") && (userAnswer=== "P")) {
-        //     window.alert("The computer chose " + compAnswer + ", You Won!");
-        //     console.log("You Won!");
-        //     gameTotal.Wins = gameTotal.Wins +1;
-        // } else if ((compAnswer==="R") && (userAnswer=== "S")) {
-        //     window.alert("The computer chose " + compAnswer + ", You Lost!");
-        //     console.log("You Lost!");
-        //     gameTotal.Loses = gameTotal.Loses +1;
-        // } else if ((compAnswer==="P") && (userAnswer=== "S")) {
-        //     window.alert("The computer chose " + compAnswer + ", You Won!");
-        //     console.log("You Won!");
-        //     gameTotal.Wins = gameTotal.Wins +1;
-        // } else if ((userAnswer !== "R") ||(userAnswer !== "S") || (userAnswer !== "P")) ; {
-        //    window.alert("I don't think you can play that???")
-        }
-
+        } else if (userAnswer !== "P","R","S") {
+        console.log("that's not an answer") 
+        window.alert("You know how to play right?")
+    }
         console.log(gameTotal)
         window.alert("Losses: " + gameTotal.Loses + " Wins: " + gameTotal.Wins + " Ties: " + gameTotal.Ties)
    
@@ -178,18 +173,6 @@ function playGame() {
 
 
 
-// function checkWins(comp, user) {
-//     possibleAnswers[0] > userAnswer["R"]
-// }
-
-
-
-var gameTotal = {
-    Wins: 0,
-    Loses: 0,
-    Ties: 0,
-}
-
 
 function startGame() {
  var gameFinished = false
@@ -197,7 +180,7 @@ function startGame() {
 while (!gameFinished) {
     // code block to be executed
     playGame();
-     gameFinished = !window.confirm("Want to play again?")
+     gameFinished = !window.confirm("Want to try again?")
     if (gameFinished) {
         window.alert("Okay, thanks for playing 🤜 ✋ ✌")
     }
