@@ -121,6 +121,7 @@ function playGame() {
    
     var userAnswer = window.prompt("Hi! Want to play?", "R, S or P?",);
     var possibleAnswers = ["S", "P", "R"] 
+    userAnswer = userAnswer.toUpperCase();
     
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -134,8 +135,10 @@ function playGame() {
         console.log(userAnswer);
        
        
-
-        if ( compAnswer === userAnswer) {
+        if (!userAnswer){
+            return;
+        }
+        else if ( compAnswer === userAnswer) {
             window.alert("The computer chose " + compAnswer + " You have tied!");
             console.log("You have tied!");
             gameTotal.Ties += 1
